@@ -33,6 +33,7 @@ about:
     `mpi-feedstock` is a metapackage that serves as a mutex to ensure only a single MPI variant is present. Available variants can be found
     in `./conda-build-config.yaml`. If a package needs to include an MPI variant, you can specify it in the pinnings. For example: `- mpi 1.0 mpich`.
   dev_url: https://github.com/AnacondaRecipes/mpi-feedstock
+  doc_url: https://github.com/AnacondaRecipes/mpi-feedstock/blob/master/README.md
 
 extra:
   recipe-maintainers:
