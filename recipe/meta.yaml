@@ -15,8 +15,6 @@ build:
   # manually we would not be producing unique filenames.
   number: 0
   string: {{ mpi }}
-  # TODO: support Windows when msmpi is packaged
-  skip: true  # [win]
 
 requirements: {}
   # None, mpi providers should depend on me
@@ -26,10 +24,16 @@ test:
     - echo "I'm a metapackage"
 
 about:
-  home: https://github.com/conda-forge/mpi-feedstock
-  license: BSD 3-clause
+  home: https://github.com/AnacondaRecipes/mpi-feedstock
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: {{ RECIPE_DIR if RECIPE_DIR is defined else '' }}/LICENSE.txt
   summary: Metapackage to select the MPI variant. Use conda's pinning mechanism in your environment to control which variant you want.
+  description: |
+    `mpi-feedstock` is a metapackage that serves as a mutex to ensure only a single MPI variant is present. Available variants can be found
+    in `./conda-build-config.yaml`. If a package needs to include an MPI variant, you can specify it in the pinnings. For example: `- mpi 1.0 mpich`.
+  dev_url: https://github.com/AnacondaRecipes/mpi-feedstock
+  doc_url: https://github.com/AnacondaRecipes/mpi-feedstock/blob/master/README.md
 
 extra:
   recipe-maintainers:
